@@ -23,6 +23,7 @@ int	main(int ac, char **av)
 {
 	t_fractal	fractal;
 
+	memset(&fractal, 0, sizeof(t_fractal));
 	if ((ac == 2 && !ft_strncmp(av[1], "mandelbrot", 10)) || (ac == 4
 			&& !ft_strncmp(av[1], "julia", 5)))
 	{

@@ -15,18 +15,23 @@
 
 //* Libraries
 //* ------------------------------------------------------------------------*//
-# include "../minilibx-linux/mlx.h" //* mlx
+# include "../minilibx-linux/mlx.h"
 # include <X11/X.h>
 # include <X11/keysym.h>
 # include <limits.h>
-# include <math.h>   //* maths
-# include <stdio.h>  //* debug printf
-# include <stdlib.h> //* malloc free
-# include <unistd.h> //* write
+# include <math.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <string.h>
 //* ------------------------------------------------------------------------*//
 
+//* Defines
+//* ------------------------------------------------------------------------*//
 # define WIDTH 1280
 # define HEIGHT 720
+//* ------------------------------------------------------------------------*//
+
 //* Colors
 //* ------------------------------------------------------------------------*//
 # define BLACK 0x000000
@@ -70,45 +75,44 @@ typedef struct s_fractal
 
 //*** Utils ***
 //* ------------------------------------------------------------------------*//
-int				ft_strncmp(char *s1, char *s2, int n);
+double			atodbl(char *str);
+void			error_malloc(void);
+int				error_wrong_input(char **av);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *str, int fd);
-double			atodbl(char *str);
-int				error_wrong_input(char **av);
-void			error_malloc(void);
+int				ft_strncmp(char *s1, char *s2, int n);
 //* ------------------------------------------------------------------------*//
 
 //*** Maths ***
 //* ------------------------------------------------------------------------*//
+t_vector		complex_squared(t_vector z);
 double			complex_norm(t_vector number);
+t_vector		complex_sum(t_vector z_1, t_vector z_2);
 double			scale(double num_to_scale, double start, double stop,
 					double length);
-t_vector		complex_sum(t_vector z_1, t_vector z_2);
-t_vector		complex_squared(t_vector z);
 //* ------------------------------------------------------------------------*//
 
 //*** Fractals ***
 //* ------------------------------------------------------------------------*//
-int				mandelbrot(int x, int y, t_fractal *fractal);
 int				julia(int x, int y, t_fractal *fractal);
-
+int				mandelbrot(int x, int y, t_fractal *fractal);
 //* ------------------------------------------------------------------------*//
 
 //*** Graphiscs ***
 //* ------------------------------------------------------------------------*//
-void			init_fractal(t_fractal *fractal, char **av);
-void			init_data(t_fractal *fractal, char **av);
-void			new_pixel_put(int x, int y, t_image *image, int color);
-void			fractal_renderer(t_fractal *fractal);
-void			init_events(t_fractal *fractal);
+void			render_ui(t_fractal *fractal);
 int				clean_close(t_fractal *fractal);
+void			init_events(t_fractal *fractal);
+int				handling_resize(t_fractal *fractal);
+void			fractal_renderer(t_fractal *fractal);
+void			init_data(t_fractal *fractal, char **av);
+void			init_fractal(t_fractal *fractal, char **av);
 int				handling_keys(int keysym, t_fractal *fractal);
+int				color_interpolation(double i, t_fractal *fractal);
+void			new_pixel_put(int x, int y, t_image *image, int color);
 int				handling_mouse(int button, int x, int y, t_fractal *fractal);
 void			nearest_neighbor_interpolation(int x, int y, int color,
 					t_fractal *fractal);
-int				color_interpolation(double i, t_fractal *fractal);
-void			render_ui(t_fractal *fractal);
-int				handling_resize(t_fractal *fractal);
 //* ------------------------------------------------------------------------*//
 
 #endif
