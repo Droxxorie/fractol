@@ -29,23 +29,27 @@ static void	cycle_color(int button, int x, int y, t_fractal *fractal)
 //* Handle the mouse events
 int	handling_mouse(int button, int x, int y, t_fractal *fractal)
 {
-	double	zooming_factor;
-	double	centering_factor;
 	double	mouse_x;
 	double	mouse_y;
+	double	mouse_x_tmp;
+	double	mouse_y_tmp;
 
-	zooming_factor = 1.1;
-	centering_factor = 0.5 * fractal->zoom;
 	if (button == 4)
 	{
-		mouse_x = scale(x, -2, +2, WIDTH - 1);
-		mouse_y = scale(y, +1.125, -1.125, HEIGHT - 1);
-		fractal->x_shift += (mouse_x - fractal->x_shift) * centering_factor;
-		fractal->y_shift += (mouse_y - fractal->y_shift) * centering_factor;
-		fractal->zoom *= exp(-log(zooming_factor));
+		mouse_x = fractal->x_shift + scale(x, -2, +2, WIDTH - 1)
+			* fractal->zoom;
+		mouse_y = fractal->y_shift + scale(y, +1.125, -1.125, HEIGHT - 1)
+			* fractal->zoom;
+		fractal->zoom /= 1.1;
+		mouse_x_tmp = fractal->x_shift + scale(x, -2, +2, WIDTH - 1)
+			* fractal->zoom;
+		mouse_y_tmp = fractal->y_shift + scale(y, +1.125, -1.125, HEIGHT - 1)
+			* fractal->zoom;
+		fractal->x_shift -= (mouse_x_tmp - mouse_x);
+		fractal->y_shift -= (mouse_y_tmp - mouse_y);
 	}
 	else if (button == 5)
-		fractal->zoom *= exp(log(zooming_factor));
+		fractal->zoom *= 1.1;
 	cycle_color(button, x, y, fractal);
 	fractal_renderer(fractal);
 	return (0);

@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-//* count numbers of leading zeros int the floating part up to 2 digits
+//* count numbers of leading zeros int the floating part up to 3 digits
 static int	ft_zerolen(double n)
 {
 	int	len;
@@ -22,7 +22,7 @@ static int	ft_zerolen(double n)
 		return (0);
 	len = 0;
 	int_part = (int)n;
-	while (int_part == 0 && len < 2)
+	while (int_part == 0 && len < 3)
 	{
 		n *= 10;
 		int_part = (int)n;
@@ -39,7 +39,7 @@ static int	ft_declen(double n)
 
 	len = 0;
 	dec_part = fabs(n - (int)n);
-	while (dec_part > 0 && len < 2)
+	while (dec_part > 0 && len < 3)
 	{
 		dec_part *= 10;
 		dec_part -= (int)dec_part;

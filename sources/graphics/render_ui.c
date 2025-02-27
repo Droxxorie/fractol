@@ -19,7 +19,7 @@ static void	print_numbers(t_fractal *fractal)
 	char	*julia_y;
 	char	*julia_speed;
 
-	julia_speed = ft_dbltoa(fractal->c_shift_speed);
+	julia_speed = ft_itoa(fabs(fractal->c_shift_speed));
 	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, WIDTH - 120,
 		50, WHITE, "Julia Speed : ");
 	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, WIDTH - 35, 50,
@@ -73,18 +73,16 @@ void	render_ui(t_fractal *fractal)
 	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 80, WHITE,
 		"[Scroll] : Zooming in/out");
 	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 100, WHITE,
-		"[Right Click] : Modify Colors");
-	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 120, WHITE,
 		"[Enter] : Reset");
-	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 140, WHITE,
+	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 120, WHITE,
 		"[Escape] : Quit");
-	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 160, WHITE,
+	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 140, WHITE,
 		"[NP-4] [NP-6] [NP-8] [NP-2] : Change Julia Set");
-	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 180, WHITE,
+	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 160, WHITE,
 		"[F1] : Fast Render");
-	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 200, WHITE,
+	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 180, WHITE,
 		"[F11] : Screenshot mod");
-	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 220, WHITE,
+	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 200, WHITE,
 		"[SPACE] : Change fractal");
 	more_render_ui(fractal);
 	print_numbers(fractal);

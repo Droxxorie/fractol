@@ -23,7 +23,7 @@ void	init_data(t_fractal *fractal, char **av)
 	fractal->c.y = 0.0;
 	fractal->c_shift.x = 0.0;
 	fractal->c_shift.y = 0.0;
-	fractal->c_shift_speed = 1;
+	fractal->c_shift_speed = 10;
 	fractal->color_divg = 437;
 	fractal->color_convg = BLACK;
 	fractal->fast_maths = 1;

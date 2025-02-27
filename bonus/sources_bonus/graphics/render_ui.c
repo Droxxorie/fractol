@@ -19,7 +19,7 @@ static void	print_numbers(t_fractal *fractal)
 	char	*julia_y;
 	char	*julia_speed;
 
-	julia_speed = ft_dbltoa(fractal->c_shift_speed);
+	julia_speed = ft_itoa(fabs(fractal->c_shift_speed));
 	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, WIDTH - 120,
 		50, WHITE, "Julia Speed : ");
 	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, WIDTH - 35, 50,
@@ -75,7 +75,7 @@ void	render_ui(t_fractal *fractal)
 	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 100, WHITE,
 		"[Scroll] : Zooming in/out");
 	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 120, WHITE,
-		"[Right Click] : Modify Colors");
+		"[Left/Right Click] : Modify Colors");
 	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 140, WHITE,
 		"[Enter] : Reset");
 	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 160, WHITE,

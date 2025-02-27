@@ -19,7 +19,7 @@ int	handling_mouse(int button, int x, int y, t_fractal *fractal)
 
 	(void)x;
 	(void)y;
-	zooming_factor = 1.1;
+	zooming_factor = 1.02;
 	if (button == 4)
 		fractal->zoom *= exp(-log(zooming_factor));
 	else if (button == 5)

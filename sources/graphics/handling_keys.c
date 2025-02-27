@@ -16,6 +16,8 @@
 static void	reset_data(t_fractal *fractal)
 {
 	fractal->zoom = 1;
+	fractal->image_quality = 40;
+	fractal->c_shift_speed = 10;
 }
 
 static void	cycle_names(t_fractal *fractal)
@@ -27,25 +29,26 @@ static void	cycle_names(t_fractal *fractal)
 		fractal->name = "julia";
 	else if (!ft_strncmp(name, "julia", 5))
 		fractal->name = "mandelbrot";
+	reset_data(fractal);
 }
 
 //* NP_8, NP_2, NP_6, NP_4
 static void	more_keys(int keysym, t_fractal *fractal)
 {
 	if (keysym == 65431)
-		fractal->c_shift.y += 0.01 * fractal->c_shift_speed;
+		fractal->c_shift.y += 0.001 * fractal->c_shift_speed;
 	else if (keysym == 65433)
-		fractal->c_shift.y -= 0.01 * fractal->c_shift_speed;
+		fractal->c_shift.y -= 0.001 * fractal->c_shift_speed;
 	else if (keysym == 65432)
-		fractal->c_shift.x += 0.01 * fractal->c_shift_speed;
+		fractal->c_shift.x += 0.001 * fractal->c_shift_speed;
 	else if (keysym == 65430)
-		fractal->c_shift.x -= 0.01 * fractal->c_shift_speed;
+		fractal->c_shift.x -= 0.001 * fractal->c_shift_speed;
 	else if (keysym == XK_space)
 		cycle_names(fractal);
 	else if (keysym == XK_Page_Up)
-		fractal->c_shift_speed *= 1.2;
+		fractal->c_shift_speed++;
 	else if (keysym == XK_Page_Down)
-		fractal->c_shift_speed /= 1.2;
+		fractal->c_shift_speed--;
 }
 
 //* Handle the keys
