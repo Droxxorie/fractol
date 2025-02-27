@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+//* Print numbers on the screen
 static void	print_numbers(t_fractal *fractal)
 {
 	char	*julia_x;
@@ -37,6 +38,7 @@ static void	print_numbers(t_fractal *fractal)
 	free(julia_speed);
 }
 
+//* Print more informations on the screen
 static void	more_render_ui(t_fractal *fractal)
 {
 	char	*image_quality;
@@ -61,6 +63,7 @@ static void	more_render_ui(t_fractal *fractal)
 	free(image_quality);
 }
 
+//* Render the UI on the screen
 void	render_ui(t_fractal *fractal)
 {
 	mlx_string_put(fractal->mlx_connection, fractal->mlx_window, 20, 30, WHITE,

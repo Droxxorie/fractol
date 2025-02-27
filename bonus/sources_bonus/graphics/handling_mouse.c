@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+//* Cycle the color of the fractal
 static void	cycle_color(int button, int x, int y, t_fractal *fractal)
 {
 	if (button == 1)
@@ -25,6 +26,7 @@ static void	cycle_color(int button, int x, int y, t_fractal *fractal)
 		fractal->color_divg = sqrt(pow(x, 2) + pow(y, 2));
 }
 
+//* Handle the mouse events
 int	handling_mouse(int button, int x, int y, t_fractal *fractal)
 {
 	double	zooming_factor;

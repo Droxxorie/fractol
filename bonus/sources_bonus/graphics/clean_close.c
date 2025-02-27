@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-// Close the display and destroy everything
+//* Close the display and destroy everything
 int	clean_close(t_fractal *fractal)
 {
 	mlx_destroy_image(fractal->mlx_connection, fractal->image.image_ptr);

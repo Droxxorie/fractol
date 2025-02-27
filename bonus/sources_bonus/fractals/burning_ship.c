@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+//* Burning ship fractal, return the color of the pixel computed
 int	burning_ship(int x, int y, t_fractal *fractal)
 {
 	t_vector	z;

@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+//* handle mouse events
 int	handling_mouse(int button, int x, int y, t_fractal *fractal)
 {
 	double	zooming_factor;

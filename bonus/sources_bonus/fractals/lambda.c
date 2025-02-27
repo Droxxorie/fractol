@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+//* Lambda fractal, return the color of the pixel computed
 int	lambda(int x, int y, t_fractal *fractal)
 {
 	t_vector	z;

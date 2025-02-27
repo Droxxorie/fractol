@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+//* Select the fractal to render
 static int	select_fractal(int x, int y, t_fractal *fractal)
 {
 	char	*name;
@@ -24,6 +25,7 @@ static int	select_fractal(int x, int y, t_fractal *fractal)
 	return (0);
 }
 
+//* Render the fractal with nearest neighbor interpolation
 static void	fast_rendering(t_fractal *fractal)
 {
 	int	x;
@@ -47,6 +49,7 @@ static void	fast_rendering(t_fractal *fractal)
 		fractal->image.image_ptr, 0, 0);
 }
 
+//* Render the fractal for each pixel
 static void	classic_rendering(t_fractal *fractal)
 {
 	int	x;
@@ -70,6 +73,7 @@ static void	classic_rendering(t_fractal *fractal)
 		fractal->image.image_ptr, 0, 0);
 }
 
+//* Render the fractal and the UI
 void	fractal_renderer(t_fractal *fractal)
 {
 	if (fractal->fast_maths % 2 == 1)

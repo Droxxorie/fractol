@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-// TODO: mod this so it is dynamic
+//* Initialize the data for the fractal
 void	init_data(t_fractal *fractal, char **av)
 {
 	fractal->image_quality = 40;

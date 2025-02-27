@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+//* Julia fractal, return the color of the pixel computed
 int	julia(int x, int y, t_fractal *fractal)
 {
 	t_vector	z;

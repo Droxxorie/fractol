@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+//* Reset the data of the fractal
 static void	reset_data(t_fractal *fractal)
 {
 	fractal->zoom = 1;
@@ -19,6 +20,7 @@ static void	reset_data(t_fractal *fractal)
 	fractal->y_shift = 0;
 }
 
+//* Cycle the names of the fractals to change the rendered fractal
 static void	cycle_names(t_fractal *fractal)
 {
 	char	*name;
@@ -55,6 +57,7 @@ static void	more_keys(int keysym, t_fractal *fractal)
 		fractal->c_shift_speed /= 1.2;
 }
 
+//* Handle the keys pressed
 int	handling_keys(int keysym, t_fractal *fractal)
 {
 	if (keysym == XK_Escape)

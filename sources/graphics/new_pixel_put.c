@@ -12,7 +12,7 @@
 
 #include "fractol.h"
 
-// Put pixel into buffer image befor displaying it
+//* Put pixel into buffer image befor displaying it
 void	new_pixel_put(int x, int y, t_image *image, int color)
 {
 	int	offset;

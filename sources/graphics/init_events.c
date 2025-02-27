@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+//* Initialize the events for the fractal
 void	init_events(t_fractal *fractal)
 {
 	mlx_hook(fractal->mlx_window, KeyPress, KeyPressMask, handling_keys,

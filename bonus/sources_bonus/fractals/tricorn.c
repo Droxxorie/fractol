@@ -12,6 +12,7 @@
 
 #include "fractol.h"
 
+//* Tricorn fractal, return the color of the pixel computed
 int	tricorn(int x, int y, t_fractal *fractal)
 {
 	t_vector	z;
