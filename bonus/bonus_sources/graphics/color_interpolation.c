@@ -20,7 +20,7 @@ int	color_interpolation(double i, t_fractal *fractal)
 	int		g;
 	int		b;
 
-	t = (i / fractal->image_quality) + log(fractal->color_shift / 255);
+	t = (i / fractal->image_quality) + log(fractal->color_divg / 255);
 	t = t * t * (3 - 2 * t);
 	r = (int)(9 * (1 - t) * t * t * t * 255);
 	g = (int)(15 * (1 - t) * (1 - t) * t * t * 255);

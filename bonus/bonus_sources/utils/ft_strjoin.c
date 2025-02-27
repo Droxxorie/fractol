@@ -1,29 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color_interpolation.c                              :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 09:40:49 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/26 09:40:49 by eraad            ###   ########.fr       */
+/*   Created: 2024/12/03 15:47:54 by eraad             #+#    #+#             */
+/*   Updated: 2024/12/03 15:47:54 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-//* Interpolate colors for smooth color gradients
-int	color_interpolation(double i, t_fractal *fractal)
+static size_t	ft_strlen(const char *s)
 {
-	double	t;
-	int		r;
-	int		g;
-	int		b;
+	size_t	i;
 
-	t = (i / fractal->image_quality) + log(fractal->color_divg / 255);
-	t = t * t * (3 - 2 * t);
-	r = (int)(9 * (1 - t) * t * t * t * 255);
-	g = (int)(15 * (1 - t) * (1 - t) * t * t * 255);
-	b = (int)(8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255);
-	return ((r << 16) + (g << 8) + b);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	size_t	i;
+	char	*str;
+
+	str = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!str)
+		return (0);
+	i = 0;
+	while (*s1)
+	{
+		str[i] = *s1;
+		s1++;
+		i++;
+	}
+	while (*s2)
+	{
+		str[i] = *s2;
+		s2++;
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

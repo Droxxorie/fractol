@@ -15,7 +15,7 @@
 // TODO: mod this so it is dynamic
 void	init_data(t_fractal *fractal, char **av)
 {
-	fractal->image_quality = 42;
+	fractal->image_quality = 40;
 	fractal->x_shift = 0.0;
 	fractal->y_shift = 0.0;
 	fractal->zoom = 1;
@@ -23,7 +23,9 @@ void	init_data(t_fractal *fractal, char **av)
 	fractal->c.y = 0.0;
 	fractal->c_shift.x = 0.0;
 	fractal->c_shift.y = 0.0;
-	fractal->color_shift = 310;
+	fractal->c_shift_speed = 1;
+	fractal->color_divg = 437;
+	fractal->color_convg = BLACK;
 	fractal->fast_maths = 1;
 	fractal->ui = 1;
 	if (!ft_strncmp(fractal->name, "julia", 5))

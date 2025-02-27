@@ -65,7 +65,9 @@ typedef struct s_fractal
 	double		zoom;
 	t_vector	c;
 	t_vector	c_shift;
-	int			color_shift;
+	double		c_shift_speed;
+	int			color_divg;
+	int			color_convg;
 	int			fast_maths;
 	int			ui;
 }				t_fractal;
@@ -75,10 +77,14 @@ typedef struct s_fractal
 //* ------------------------------------------------------------------------*//
 double			atodbl(char *str);
 void			error_malloc(void);
+char			*ft_itoa(int number);
+char			*ft_dbltoa(double number);
+char			*ft_strdup(const char *s);
 int				error_wrong_input(char **av);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *str, int fd);
 int				ft_strncmp(char *s1, char *s2, int n);
+char			*ft_strjoin(char const *s1, char const *s2);
 //* ------------------------------------------------------------------------*//
 
 //*** Maths ***

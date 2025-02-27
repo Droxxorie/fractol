@@ -6,7 +6,7 @@
 #    By: eraad <eraad@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/06 14:33:34 by eraad             #+#    #+#              #
-#    Updated: 2025/02/26 21:22:18 by eraad            ###   ########.fr        #
+#    Updated: 2025/02/27 14:24:38 by eraad            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ SRCS_DIR		=	sources/
 SRC_FILES		=	fractals/julia.c fractals/mandelbrot.c \
 					graphics/clean_close.c graphics/fractal_renderer.c graphics/handling_keys.c graphics/handling_mouse.c graphics/init_data.c graphics/init_events.c graphics/init_fractal.c graphics/new_pixel_put.c graphics/color_interpolation.c graphics/nearest_neighbor_interpolation.c graphics/render_ui.c \
 					math/math_complex_norm.c math/math_complex_squared.c math/math_complex_sum.c math/math_scale.c \
-					utils/error_wrong_input.c utils/ft_atodbl.c utils/ft_putchar_fd.c utils/ft_putstr_fd.c utils/ft_strncmp.c utils/error_malloc.c \
+					utils/error_wrong_input.c utils/ft_atodbl.c utils/ft_putchar_fd.c utils/ft_putstr_fd.c utils/ft_strncmp.c utils/error_malloc.c utils/ft_itoa.c utils/ft_strjoin.c utils/ft_dbltoa.c utils/ft_strdup.c \
 					main.c
 
 SRCS = $(addprefix $(SRCS_DIR), $(SRC_FILES))
@@ -44,7 +44,7 @@ BONUS_SRCS_DIR	=	bonus/bonus_sources/
 BONUS_SRC_FILES	=	fractals/julia.c fractals/mandelbrot.c fractals/burning_ship.c fractals/tricorn.c fractals/lambda.c \
 					graphics/clean_close.c graphics/fractal_renderer.c graphics/handling_keys.c graphics/handling_mouse.c graphics/init_data.c graphics/init_events.c graphics/init_fractal.c graphics/new_pixel_put.c graphics/color_interpolation.c graphics/nearest_neighbor_interpolation.c graphics/render_ui.c \
 					math/math_complex_norm.c math/math_complex_squared.c math/math_complex_sum.c math/math_scale.c \
-					utils/error_wrong_input.c utils/ft_atodbl.c utils/ft_putchar_fd.c utils/ft_putstr_fd.c utils/ft_strncmp.c utils/error_malloc.c \
+					utils/error_wrong_input.c utils/ft_atodbl.c utils/ft_putchar_fd.c utils/ft_putstr_fd.c utils/ft_strncmp.c utils/error_malloc.c utils/ft_itoa.c utils/ft_strjoin.c utils/ft_dbltoa.c utils/ft_strdup.c \
 					main.c
 
 BONUS_SRCS = $(addprefix $(BONUS_SRCS_DIR), $(BONUS_SRC_FILES))

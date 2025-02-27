@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color_interpolation.c                              :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eraad <eraad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 09:40:49 by eraad             #+#    #+#             */
-/*   Updated: 2025/02/26 09:40:49 by eraad            ###   ########.fr       */
+/*   Created: 2024/12/03 15:47:07 by eraad             #+#    #+#             */
+/*   Updated: 2024/12/03 15:47:07 by eraad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-//* Interpolate colors for smooth color gradients
-int	color_interpolation(double i, t_fractal *fractal)
+char	*ft_strdup(const char *s)
 {
-	double	t;
-	int		r;
-	int		g;
-	int		b;
+	int		i;
+	char	*dup;
 
-	t = (i / fractal->image_quality) + log(fractal->color_divg / 255);
-	t = t * t * (3 - 2 * t);
-	r = (int)(9 * (1 - t) * t * t * t * 255);
-	g = (int)(15 * (1 - t) * (1 - t) * t * t * 255);
-	b = (int)(8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255);
-	return ((r << 16) + (g << 8) + b);
+	i = 0;
+	while (s[i])
+		i++;
+	dup = malloc(sizeof(char) * (i + 1));
+	if (!dup)
+		return (0);
+	i = 0;
+	while (s[i])
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
 }

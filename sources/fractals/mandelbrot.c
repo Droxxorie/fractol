@@ -26,7 +26,7 @@ int	mandelbrot(int x, int y, t_fractal *fractal)
 	z.y = 0;
 	c.x = (scale(x, -2, +2, WIDTH - 1) * fractal->zoom) + fractal->x_shift;
 	c.y = (scale(y, +1.1, -1.1, HEIGHT - 1) * fractal->zoom) + fractal->y_shift;
-	while ((z.x * z.x + z.y * z.y) <= 5 && i < fractal->image_quality)
+	while ((z.x * z.x + z.y * z.y) <= 4 && i < fractal->image_quality)
 	{
 		temp = z;
 		z.x = (temp.x * temp.x) - (temp.y * temp.y) + c.x;
@@ -34,7 +34,7 @@ int	mandelbrot(int x, int y, t_fractal *fractal)
 		i++;
 	}
 	if (i == fractal->image_quality)
-		return (BLACK);
+		return (fractal->color_convg);
 	nu = log((log(z.x * z.x + z.y * z.y) / 2.0) / log(2)) / log(2);
 	return (color_interpolation(i + 1 - nu, fractal));
 }

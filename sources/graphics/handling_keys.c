@@ -32,15 +32,19 @@ static void	cycle_names(t_fractal *fractal)
 static void	more_keys(int keysym, t_fractal *fractal)
 {
 	if (keysym == 65431)
-		fractal->c_shift.y += 0.01;
+		fractal->c_shift.y += 0.01 * fractal->c_shift_speed;
 	else if (keysym == 65433)
-		fractal->c_shift.y -= 0.01;
+		fractal->c_shift.y -= 0.01 * fractal->c_shift_speed;
 	else if (keysym == 65432)
-		fractal->c_shift.x += 0.01;
+		fractal->c_shift.x += 0.01 * fractal->c_shift_speed;
 	else if (keysym == 65430)
-		fractal->c_shift.x -= 0.01;
+		fractal->c_shift.x -= 0.01 * fractal->c_shift_speed;
 	else if (keysym == XK_space)
 		cycle_names(fractal);
+	else if (keysym == XK_Page_Up)
+		fractal->c_shift_speed *= 1.2;
+	else if (keysym == XK_Page_Down)
+		fractal->c_shift_speed /= 1.2;
 }
 
 int	handling_keys(int keysym, t_fractal *fractal)

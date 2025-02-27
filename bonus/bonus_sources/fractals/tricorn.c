@@ -34,7 +34,7 @@ int	tricorn(int x, int y, t_fractal *fractal)
 		i++;
 	}
 	if (i == fractal->image_quality)
-		return (BLACK);
+		return (fractal->color_convg);
 	nu = log((log(z.x * z.x + z.y * z.y) / 2.0) / log(2)) / log(2);
 	return (color_interpolation(i + 1 - nu, fractal));
 }
