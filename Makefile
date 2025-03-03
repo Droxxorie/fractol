@@ -6,18 +6,18 @@
 #    By: eraad <eraad@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/06 14:33:34 by eraad             #+#    #+#              #
-#    Updated: 2025/02/27 16:01:48 by eraad            ###   ########.fr        #
+#    Updated: 2025/03/03 12:58:38 by eraad            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Variables
-NAME		= fractol
-NAME_BONUS	= fractol_bonus
-CC			= cc
-CFLAGS		= -Wall -Wextra -Werror -O3 -march=native -funroll-loops -ffast-math -fomit-frame-pointer
+NAME			= fractol
+NAME_BONUS		= fractol_bonus
+CC				= cc
+CFLAGS			= -Wall -Wextra -Werror -O3 -march=native -funroll-loops -ffast-math -fomit-frame-pointer 
 
-INCLUDE		= -I./include -I./minilibx-linux
-MLX 		= minilibx-linux/libmlx.a minilibx-linux/libmlx_Linux.a
+INCLUDE			= -I./include -I./minilibx-linux
+MLX 			= minilibx-linux/libmlx.a minilibx-linux/libmlx_Linux.a
 INCLUDE_BONUS	= -I./bonus/include_bonus -I./minilibx-linux
 
 #Colors
