@@ -98,7 +98,7 @@ L'interface utilisateur est disponible et affiche les contrôles ainsi que des i
 
 ---
 
-### Fonctionnement de l'algorithme
+## Fonctionnement de l'algorithme
 
 L'algorithme repose sur plusieurs étapes :
 
