@@ -16,3 +16,33 @@ Fractol est un programme permettant d'afficher et d'éxplorer différentes fract
 - La bibliothèque **MinilibX** installée
 - Un compilateur **cc**
 
+### [MinilibX](https://github.com/42paris/minilibx-linux.git)
+
+
+
+### Compilation
+
+La commande suivante génère un exécutable 'fractol':
+
+```sh
+make
+```
+
+Pour nettoyer les fichiers objets :
+
+```sh
+make clean
+```
+
+Pour supprimer les fichiers objets et l'exécutable :
+
+```sh
+make fclean
+```
+
+Pour recompiler depuis zéro :
+
+```sh
+make re
+```
+
