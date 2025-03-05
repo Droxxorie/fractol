@@ -218,6 +218,6 @@ Projet réalisé par [**@eraad**](https://profile.intra.42.fr/users/eraad) dans 
 
 ## Ressources utiles
 
-🔹 [Théorie des fractales](https://fr.wikipedia.org/wiki/Fractale)\
-🔹 [MinilibX Documentation](https://github.com/42Paris/minilibx-linux)\
+🔹 [Théorie des fractales](https://fr.wikipedia.org/wiki/Fractale)
+🔹 [MinilibX Documentation](https://github.com/42Paris/minilibx-linux)
 🔹 [Exploration des ensembles de Julia et Mandelbrot](https://www.complexityexplorer.org/)
