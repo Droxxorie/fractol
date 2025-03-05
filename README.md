@@ -6,7 +6,7 @@
 ## Language : C
 Ce projet à été réalisé dans le cadre du cursus à l'école **42 Paris**.
 
-Fractol est un programme permettant d'afficher et d'éxplorer différentes fractales intéractives à l'aide de la bibliothèqe graphique MinilibX. Il met en oeuvre des calculs mathématiques afin de tracer en temps réel des ensembles fractals.
+Fractol est un programme permettant d'afficher et d'explorer différentes fractales intéractives à l'aide de la bibliothèque graphique MinilibX. Il met en oeuvre des calculs mathématiques afin de tracer en temps réel des ensembles fractals.
 
 ---
 
@@ -22,7 +22,7 @@ Avant de compiler le projet, il est nécessaire d'installer la **[MinilibX](http
 
 Il faut :
 
-Cloner la MinilibX dans le dossier du proejt puis y rentrer :
+Cloner la MinilibX dans le dossier du projet puis y rentrer :
 
 ```sh
 git clone https://github.com/42paris/minilibx-linux.git minilibx && cd minilibx
@@ -41,7 +41,7 @@ La commande suivante génère un exécutable 'fractol':
 make
 ```
 
-Pour nettoyer les fichiers objets :
+Pour supprimer les fichiers objets temporaires :
 
 ```sh
 make clean
@@ -66,7 +66,7 @@ La commande suivant génère un exécutable 'fractol_bonus', plus complet que l'
 make bonus
 ```
 
-Pour recompiler le bonus depuis zéro :
+Pour recompiler entièrement le bonus :
 
 ```sh
 make re_bonus
@@ -84,7 +84,7 @@ Le programme prends en argument le type de fractale à afficher :
 Avec '[type]' pouvant être :
 
 - 'mandelbrot'
-- 'julia' <x> <y>
+- 'julia' 'x' 'y' **(x, y des doubles)**
 - 'lambda' **(bonus)**
 - 'burning_ship' **(bonus)**
 - 'tricorn' **(bonus)**
@@ -93,6 +93,10 @@ Exemple :
 
 ```sh
 ./fractol julia -1.47 0.0
+```
+
+```sh
+./fractol lambda
 ```
 
 ---
@@ -179,7 +183,7 @@ L'ensemble de **Lambda** est défini par une transformation logarithmique de la 
 $z_{n+1}=\lambda z_n(1 - z_n)$
 
 Avec :
-- $\lambda$ un paramètre détermianant la dynamique du système.
+- $\lambda$ un paramètre déterminant la dynamique du système.
 - $z_0$ le point complexe initial.
 
 ![Lambda 1](images/Lambda_2.png)
@@ -197,7 +201,7 @@ $z_{n+1}=(|Re(z_n)| + i|Im(z_n)|)^2+c$
 ***Figure 11.** Ensemble tricorn.*
 
 ### Burning Ship
-**Burning Ship** est une autre variation de Mandelbrot qui utilise le conjugaison complexe :
+**Burning Ship** est une autre variation de Mandelbrot qui utilise la conjugaison complexe :
 
 $z_{n+1}=\overline{z_n}^2+c$
 
