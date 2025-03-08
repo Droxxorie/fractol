@@ -13,7 +13,7 @@
 #include "fractol.h"
 
 //* Initialize the data for the fractal
-void	init_data(t_fractal *fractal, char **av)
+void	init_data(t_fractal *fractal, char **av, int ac)
 {
 	fractal->image_quality = 40;
 	fractal->x_shift = 0.0;
@@ -28,7 +28,7 @@ void	init_data(t_fractal *fractal, char **av)
 	fractal->color_convg = BLACK;
 	fractal->fast_maths = 1;
 	fractal->ui = 1;
-	if (!ft_strncmp(fractal->name, "julia", 5))
+	if (!ft_strncmp(fractal->name, "julia", 5) && ac == 4)
 	{
 		if (error_wrong_input(av))
 		{

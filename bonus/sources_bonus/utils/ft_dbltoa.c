@@ -66,11 +66,13 @@ static void	handle_nums(double num, char **result, char **int_part,
 		zero_len--;
 	}
 	temp = ft_strjoin(*result, *dec_part);
+	free(*result);
 	*result = ft_strdup(temp);
 	free(temp);
 	if (num < 0.0)
 	{
 		temp = ft_strjoin("-", *result);
+		free(*result);
 		*result = ft_strdup(temp);
 		free(temp);
 	}
