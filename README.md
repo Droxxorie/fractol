@@ -12,6 +12,12 @@ Fractol est un programme permettant d'afficher et d'explorer différentes fracta
 
 ## Instalation et Compilation
 
+Cloner le repo :
+
+```sh
+git clone git@github.com:Droxxorie/fractol.git fractol && cd fractol
+```
+
 ### Prérequis
 - Une machine sous **Linux** ou **MacOS**
 - La bibliothèque **MinilibX** installée
