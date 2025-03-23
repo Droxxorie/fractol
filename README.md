@@ -87,13 +87,13 @@ Le programme prends en argument le type de fractale à afficher :
 ./fractol [type]
 ```
 
-Avec '[type]' pouvant être :
+Avec `[type]` pouvant être :
 
-- 'mandelbrot'
-- 'julia' 'x' 'y' **(x, y des doubles)**
-- 'lambda' **(bonus)**
-- 'burning_ship' **(bonus)**
-- 'tricorn' **(bonus)**
+- `mandelbrot`
+- `julia` `x` `y`  **(x, y des doubles)**
+- `lambda`         **(bonus)**
+- `burning_ship`   **(bonus)**
+- `tricorn`        **(bonus)**
 
 Exemple :
 
@@ -115,7 +115,7 @@ L'interface utilisateur est disponible et affiche les contrôles ainsi que des i
 ![UI Fractol](images/UI_2.png)
 ***Figure 2.** L'interface utilisateur (UI) et les commandes disponibles.*
 
-Il est possible de changer le mode d'affichage via la touche 'F1' :
+Il est possible de changer le mode d'affichage via la touche `F1` :
 
 ![Animation](images/Mandelbrot_GIF.gif)
 ***Figure 3.** Changement de mode d'affichage.*
@@ -150,12 +150,12 @@ L'algorithme repose sur plusieurs étapes :
 Voici les fractales disponibles dans le programme :
 
 ### Ensemble de Mandelbrot
-L'ensemble de Mandelbrot est définit par l'itération de la fonction complexe suivante :
+L'ensemble de Mandelbrot est définit par l'itération de la fonction complexe :
 $z_{n+1}=z_n^2+c$
 
 Avec :
 - $z_0=0$
-- c un nombre complexe correspondant aux coordonnées du pixel.
+- c, un nombre complexe correspondant aux coordonnées d'un pixel dans le plan.
 
 Un point appartient à l'ensemble si $|z_n|$ reste borné après un certain nombre d'itérations.
 
@@ -168,11 +168,11 @@ L'ensemble de Julia est similaire à celui de Mandelbrot :
 $z_{n+1}=z_n^2+c$
 
 Avec :
-- $z_0$ les coordonnées complexes du pixel.
-- c est un paramètre complexe fixe.
+- $z_0$, les coordonnées complexes d'un pixel dans le plan.
+- c, est un paramètre complexe fixe.
 
 ![Animation](images/Julia_GIF_2.gif)
-***Figure 5.** Animation dynamique de l'ensemble de Julia.*
+***Figure 5.** GIF de l'ensemble de Julia.*
 
 ![Julia 2](images/Julia_-0.7269_0.1889.png)
 ***Figure 6.** Ensemble de Julia* $c=-0.7269 + 0.1889i$
@@ -189,8 +189,8 @@ L'ensemble de **Lambda** est défini par une transformation logarithmique de la 
 $z_{n+1}=\lambda z_n(1 - z_n)$
 
 Avec :
-- $\lambda$ un paramètre déterminant la dynamique du système.
-- $z_0$ le point complexe initial.
+- $\lambda$, un paramètre déterminant la dynamique du système.
+- $z_0$, le point complexe initial.
 
 ![Lambda 1](images/Lambda_2.png)
 ***Figure 9.** Ensemble lambda.*
